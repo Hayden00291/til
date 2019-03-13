@@ -33,33 +33,30 @@ driver.get('https://www.ups.com/mobile/ratetnthome?loc=ja_JP')
 
 # 発送元情報セット
 # 発送元国
-from_country_element = driver.find_element_by_id('orig_Country')
-from_country_selecter = Select(from_country_element)
-from_country_selecter.select_by_value(from_dict['country'])
+from_country = driver.find_element_by_id('orig_Country')
+Select(from_country).select_by_value(from_dict['country'])
 # 発送元郵便番号
-from_postalcode_element = driver.find_element_by_id('orig_PostalCode')
-from_postalcode_element.send_keys(from_dict['postal_code'])
+from_postalcode = driver.find_element_by_id('orig_PostalCode')
+from_postalcode.send_keys(from_dict['postal_code'])
 # 発送元都市
-from_city_element = driver.find_element_by_id('orig_City')
-from_city_element.send_keys(from_dict['city'])
+from_city = driver.find_element_by_id('orig_City')
+from_city.send_keys(from_dict['city'])
 
 # 宛先情報セット
 # 宛先国
-to_country_element = driver.find_element_by_id('dest_Country')
-to_country_selecter = Select(to_country_element)
-to_country_selecter.select_by_value(to_dict['country'])
+to_country = driver.find_element_by_id('dest_Country')
+Select(to_country).select_by_value(to_dict['country'])
 # 宛先郵便番号
-to_postalcode_element = driver.find_element_by_id('dest_PostalCode')
-to_postalcode_element.send_keys(to_dict['postal_code'])
+to_postalcode = driver.find_element_by_id('dest_PostalCode')
+to_postalcode.send_keys(to_dict['postal_code'])
 # 宛先都市
-to_city_element = driver.find_element_by_id('dest_City')
-to_city_element.send_keys(to_dict['city'])
+to_city = driver.find_element_by_id('dest_City')
+to_city.send_keys(to_dict['city'])
 
 # 貨物情報セット
 # 梱包タイプ
-package_type_element = driver.find_element_by_id('packageType')
-package_type_selecter = Select(package_type_element)
-package_type_selecter.select_by_value('02')
+package_type = driver.find_element_by_id('packageType')
+Select(package_type).select_by_value('02')
 # 重量
 package_weight = driver.find_element_by_id('packageWeight')
 package_weight.send_keys(package_dict['weight'])
